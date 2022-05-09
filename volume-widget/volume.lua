@@ -215,8 +215,8 @@ local function worker(user_args)
                     end),
                     awful.button({}, 4, function() volume:inc() end),
                     awful.button({}, 5, function() volume:dec() end),
-                    awful.button({}, 2, function() volume:mixer() end),
-                    awful.button({}, 1, function() volume:toggle() end)
+                    awful.button({}, 1, function() volume:mixer() end),
+                    awful.button({}, 2, function() volume:toggle() end)
             )
     )
 

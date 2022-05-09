@@ -157,7 +157,7 @@ local function worker(user_args)
             level_widget.text = string.format('%d%%', charge)
         end
 
-        if (charge >= 1 and charge < 15) then
+        if (charge >= 1 and charge < 20) then
             batteryType = "battery-empty%s-symbolic"
             if enable_battery_warning and status ~= 'Charging' and os.difftime(os.time(), last_battery_check) > 300 then
                 -- if 5 minutes have elapsed since the last warning
@@ -189,7 +189,7 @@ local function worker(user_args)
         battery_widget:connect_signal("mouse::leave", function() naughty.destroy(notification) end)
     elseif display_notification_onClick then
         battery_widget:connect_signal("button::press", function(_,_,_,button)
-            if (button == 3) then show_battery_status(batteryType) end
+            if (button == 1) then show_battery_status(batteryType) end
         end)
         battery_widget:connect_signal("mouse::leave", function() naughty.destroy(notification) end)
     end
